@@ -22,7 +22,7 @@ chrome.extension.sendMessage({}, function(response) {
 // When a page is loaded, consumeSchema runs, returning a JSON-like
 // object made up of all the schema elements on the page.
 var consumeSchema = function() {
-	var $schema = $('[itemscope]'),
+	var $schema = $('[itemscope]').not('[itemscope] [itemscope]'),
 		result = new Array();
 
 	$.each($schema,function(index){
